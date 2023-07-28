@@ -21,8 +21,7 @@ jobs:
       DOCKER_org_opencontainers_image_title: "Example Golang Application"
       DOCKER_org_opencontainers_image_description: "Example application written in Golang"
 
-    # --build-arg PROJECT_VERSION="$PROJECT_VERSION"
-    #           --build-arg DOCKER_org_opencontainers_image_authors="$DOCKER_org_opencontainers_image_authors"
+    #
     #           --build-arg DOCKER_org_opencontainers_image_url="$DOCKER_org_opencontainers_image_url"
     #           --build-arg DOCKER_org_opencontainers_image_vendor="$DOCKER_org_opencontainers_image_vendor"
     #           --build-arg DOCKER_org_opencontainers_image_licenses="$DOCKER_org_opencontainers_image_licenses"
@@ -41,4 +40,5 @@ jobs:
           docker buildx build .
           --file Dockerfile
           --build-arg PROJECT_VERSION="$PROJECT_VERSION"
+          --build-arg DOCKER_org_opencontainers_image_authors="$DOCKER_org_opencontainers_image_authors"
           --tag "$DOCKER_IMAGE_NAME":$(date +%s)
