@@ -1,5 +1,9 @@
 # Example Golang Application
 
+[![Docker workflow status](https://github.com/sebykrueger/golang-gokit-sandbox/actions/workflows/docker_image.yaml/badge.svg)](https://github.com/sebykrueger/golang-gokit-sandbox/actions/workflows/docker_image.yaml)
+[![Go workflow status](https://github.com/miguno/golang-docker-build-tutorial/actions/workflows/go.yml/badge.svg)](https://github.com/miguno/golang-docker-build-tutorial/actions/workflows/go.yml)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 A template project to create a Docker image for a Go application. The example application exposes an HTTP endpoint.
 
 Features:
