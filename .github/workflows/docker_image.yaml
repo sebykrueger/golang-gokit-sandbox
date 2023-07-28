@@ -21,9 +21,6 @@ jobs:
       DOCKER_org_opencontainers_image_title: "Example Golang Application"
       DOCKER_org_opencontainers_image_description: "Example application written in Golang"
 
-    #
-    # --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
-
     steps:
       - uses: actions/checkout@v3
         env:
@@ -41,4 +38,5 @@ jobs:
           --build-arg DOCKER_org_opencontainers_image_title="$DOCKER_org_opencontainers_image_title"
           --build-arg DOCKER_org_opencontainers_image_description="$DOCKER_org_opencontainers_image_description"
           --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD)
+          --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
           --tag "$DOCKER_IMAGE_NAME":$(date +%s)
