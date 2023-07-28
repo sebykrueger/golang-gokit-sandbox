@@ -21,6 +21,15 @@ jobs:
       DOCKER_org_opencontainers_image_title: "Example Golang Application"
       DOCKER_org_opencontainers_image_description: "Example application written in Golang"
 
+    # --build-arg PROJECT_VERSION="$PROJECT_VERSION"
+    #           --build-arg DOCKER_org_opencontainers_image_authors="$DOCKER_org_opencontainers_image_authors"
+    #           --build-arg DOCKER_org_opencontainers_image_url="$DOCKER_org_opencontainers_image_url"
+    #           --build-arg DOCKER_org_opencontainers_image_vendor="$DOCKER_org_opencontainers_image_vendor"
+    #           --build-arg DOCKER_org_opencontainers_image_licenses="$DOCKER_org_opencontainers_image_licenses"
+    #           --build-arg DOCKER_org_opencontainers_image_ref_name="$DOCKER_org_opencontainers_image_ref_name"
+    #           --build-arg DOCKER_org_opencontainers_image_title="$DOCKER_org_opencontainers_image_title"
+    #           --build-arg DOCKER_org_opencontainers_image_description="$DOCKER_org_opencontainers_image_description"
+
     steps:
       - uses: actions/checkout@v3
         env:
@@ -29,14 +38,6 @@ jobs:
         run: >
           docker buildx build .
           --file Dockerfile
-          --build-arg PROJECT_VERSION="$PROJECT_VERSION"
-          --build-arg DOCKER_org_opencontainers_image_authors="$DOCKER_org_opencontainers_image_authors"
-          --build-arg DOCKER_org_opencontainers_image_url="$DOCKER_org_opencontainers_image_url"
-          --build-arg DOCKER_org_opencontainers_image_vendor="$DOCKER_org_opencontainers_image_vendor"
-          --build-arg DOCKER_org_opencontainers_image_licenses="$DOCKER_org_opencontainers_image_licenses"
-          --build-arg DOCKER_org_opencontainers_image_ref_name="$DOCKER_org_opencontainers_image_ref_name"
-          --build-arg DOCKER_org_opencontainers_image_title="$DOCKER_org_opencontainers_image_title"
-          --build-arg DOCKER_org_opencontainers_image_description="$DOCKER_org_opencontainers_image_description"
           --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) \
           --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
           --tag "$DOCKER_IMAGE_NAME":$(date +%s)
