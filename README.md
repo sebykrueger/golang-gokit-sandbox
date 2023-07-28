@@ -26,12 +26,12 @@ This application deploys a basic Golang application.
 
 - **Verify the Docker labels**
 
-```
-docker inspect gokit-stringservice | jq -r '.[0].Config.Labels'
-```
+  ```
+  docker inspect gokit-stringservice | jq -r '.[0].Config.Labels'
+  ```
 
 - At the end, **do not** forget to stop and remove the container:
 
-```
-docker kill gokit-stringservice && docker rm gokit-stringservice
-```
+  ```
+  docker kill gokit-stringservice && docker rm gokit-stringservice
+  ```
