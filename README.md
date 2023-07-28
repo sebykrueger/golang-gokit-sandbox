@@ -1,6 +1,7 @@
 # Example Golang Application
 
 [![Docker workflow status](https://github.com/sebykrueger/golang-gokit-sandbox/actions/workflows/docker_image.yaml/badge.svg)](https://github.com/sebykrueger/golang-gokit-sandbox/actions/workflows/docker_image.yaml)
+[![Go workflow status](https://github.com/sebykrueger/golang-gokit-sandbox/actions/workflows/go.yaml/badge.svg)](https://github.com/sebykrueger/golang-gokit-sandbox/blob/main/.github/workflows/go.yaml)
 [![License](https://badgen.net/github/license/sebykrueger/golang-gokit-sandbox?labelColor=2e3a44&label=License)](https://github.com/sebykrueger/golang-gokit-sandbox/blob/main/LICENSE)
 [![Dependabot Status](https://badgen.net/badge/Dependabot/enabled?labelColor=2e3a44&color=blue)](https://github.com/sebykrueger/golang-gokit-sandbox/blob/main/.github/dependabot.yaml)
 
@@ -14,7 +15,7 @@ Features:
 - Supports [Docker BuildKit](https://docs.docker.com/build/)
 - Golang 1.20.5
 - [GitHub Actions workflows](https://github.com/sebykrueger/golang-gokit-sandbox/actions) for
-  [Golang](https://github.com/miguno/golang-docker-build-tutorial/actions/workflows/go.yml)
+  [Golang](https://github.com/sebykrueger/golang-gokit-sandbox/blob/main/.github/workflows/go.yaml)
   and
   [Docker](https://github.com/sebykrueger/golang-gokit-sandbox/blob/main/.github/workflows/docker_image.yaml)
 - Uses [.env](.env) as central configuration to set variables used by
