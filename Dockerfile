@@ -35,34 +35,6 @@ RUN go test -cover -v ./...
 
 # Stage 2 (to create a downsized "container executable", ~5MB)
 FROM scratch
-
-# Image And Container Label Metadata
-# https://github.com/opencontainers/image-spec/blob/main/annotations.md
-# ARG PROJECT_VERSION
-# ARG DOCKER_org_opencontainers_image_authors
-# ARG DOCKER_org_opencontainers_image_url
-# ARG DOCKER_org_opencontainers_image_vendor
-# ARG DOCKER_org_opencontainers_image_licenses
-# ARG DOCKER_org_opencontainers_image_ref_name
-# ARG DOCKER_org_opencontainers_image_title
-# ARG DOCKER_org_opencontainers_image_description
-
-# LABEL maintainer="${DOCKER_org_opencontainers_image_authors}" \
-#     org.opencontainers.image.authors="${DOCKER_org_opencontainers_image_authors}" \
-#     org.opencontainers.image.url="${DOCKER_org_opencontainers_image_url}" \
-#     org.opencontainers.image.version="${PROJECT_VERSION}" \
-#     org.opencontainers.image.vendor="${DOCKER_org_opencontainers_image_vendor}" \
-#     org.opencontainers.image.licenses="${DOCKER_org_opencontainers_image_licenses}" \
-#     org.opencontainers.image.ref.name="${DOCKER_org_opencontainers_image_ref_name}" \
-#     org.opencontainers.image.title="${DOCKER_org_opencontainers_image_title}" \
-#     org.opencontainers.image.description="${DOCKER_org_opencontainers_image_description}"
-
-# ARG GIT_COMMIT
-# LABEL org.opencontainers.image.revision "${GIT_COMMIT}"
-
-# ARG BUILD_DATE
-# LABEL org.opencontainers.image.created "${BUILD_DATE}"
-
 COPY --from=builder /app .
 EXPOSE 8080
 ENTRYPOINT ["./app"]
