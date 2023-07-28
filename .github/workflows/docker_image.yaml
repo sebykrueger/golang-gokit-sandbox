@@ -64,3 +64,10 @@ jobs:
             BUILD_TIME=${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.created'] }}
             BUILD_VERSION=${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.version'] }}
             BUILD_REVISION=${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.revision'] }}
+
+      - name: Update repo description
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: ${{ env.DOCKER_IMAGE_NAME }}
