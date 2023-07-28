@@ -30,7 +30,7 @@ This application deploys a basic Golang application.
 docker inspect gokit-stringservice | jq -r '.[0].Config.Labels'
 ```
 
-- ** At the end, **do not\*\* forget to stop and remove the container:
+- At the end, **do not** forget to stop and remove the container:
 
 ```
 docker kill gokit-stringservice && docker rm gokit-stringservice
