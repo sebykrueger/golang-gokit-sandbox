@@ -16,6 +16,6 @@ set -o allexport && source .env && set +o allexport
 
 # Set variable from environment variable PROJECT_VERSION, if the latter exists.
 # If not, fall back to the specified default value (excluding the leading `-`).
-declare -r project_version="${PROJECT_VERSION:-1.0.0-alpha}"
+declare -r build_version="${BUILD_VERSION:-1.0.0-alpha}"
 
 ./build/gokit-stringservice

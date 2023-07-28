@@ -16,11 +16,6 @@ set -o allexport && source .env && set +o allexport
 
 # Set variable from environment variable PROJECT_VERSION, if the latter exists.
 # If not, fall back to the specified default value (excluding the leading `-`).
-declare -r project_version="${PROJECT_VERSION:-1.0.0-alpha}"
+declare -r build_version="${BUILD_VERSION:-1.0.0-alpha}"
 
-echo "Building bundle for version ${project_version}"
-
-# build the bundle into the build folder
-mkdir -p build # create folder if it doesn't exist
-go build -o build .
-
+go test -cover -v ./...

@@ -1,8 +1,7 @@
 # Example Golang Application
 
 [![Docker workflow status](https://github.com/sebykrueger/golang-gokit-sandbox/actions/workflows/docker_image.yaml/badge.svg)](https://github.com/sebykrueger/golang-gokit-sandbox/actions/workflows/docker_image.yaml)
-[![Go workflow status](https://github.com/miguno/golang-docker-build-tutorial/actions/workflows/go.yml/badge.svg)](https://github.com/miguno/golang-docker-build-tutorial/actions/workflows/go.yml)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://badgen.net/github/license/sebykrueger/golang-gokit-sandbox?labelColor=2e3a44&label=License)](https://github.com/sebykrueger/golang-gokit-sandbox/blob/main/LICENSE)
 [![Dependabot Status](https://badgen.net/badge/Dependabot/enabled?labelColor=2e3a44&color=blue)](https://github.com/sebykrueger/golang-gokit-sandbox/blob/main/.github/dependabot.yaml)
 
 A template project to create a Docker image for a Go application. The example application exposes an HTTP endpoint.
@@ -14,10 +13,10 @@ Features:
   to minimize the size of the generated Docker image, which is 8MB
 - Supports [Docker BuildKit](https://docs.docker.com/build/)
 - Golang 1.20.5
-- [GitHub Actions workflows](https://github.com/miguno/golang-docker-build-tutorial/actions) for
+- [GitHub Actions workflows](https://github.com/sebykrueger/golang-gokit-sandbox/actions) for
   [Golang](https://github.com/miguno/golang-docker-build-tutorial/actions/workflows/go.yml)
   and
-  [Docker](https://github.com/miguno/golang-docker-build-tutorial/actions/workflows/docker-image.yml)
+  [Docker](https://github.com/sebykrueger/golang-gokit-sandbox/blob/main/.github/workflows/docker_image.yaml)
 - Uses [.env](.env) as central configuration to set variables used by
   Docker LABEL Container Image metadata.
 
