@@ -35,6 +35,6 @@ docker buildx build $DOCKER_OPTIONS \
     --build-arg DOCKER_org_opencontainers_image_description="${DOCKER_org_opencontainers_image_description}" \
     --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) \
     --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
-    -t "$DOCKER_IMAGE_NAME":"$DOCKER_IMAGE_TAG" .
+    --tag "$DOCKER_IMAGE_NAME":"$DOCKER_IMAGE_TAG" .
 
     

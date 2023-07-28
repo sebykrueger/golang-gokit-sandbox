@@ -1,0 +1,42 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      PROJECT_VERSION: 1.0.0-alpha
+      DOCKER_NAME: "gokit-stringservice"
+      DOCKER_IMAGE_NAME: "sebykrueger/gokit-stringservice"
+      DOCKER_org_opencontainers_image_authors: "Sebastian Krueger <sebykrueger@gmail.com>"
+      DOCKER_org_opencontainers_image_url: "https://github.com/sebykrueger/golang-gokit-sandbox"
+      DOCKER_org_opencontainers_image_vendor: "Sebastian Krueger"
+      DOCKER_org_opencontainers_image_licenses: "Apache-2.0"
+      DOCKER_org_opencontainers_image_ref_name: "sebykrueger/golang-gokit-sandbox"
+      DOCKER_org_opencontainers_image_title: "Example Golang Application"
+      DOCKER_org_opencontainers_image_description: "Example application written in Golang"
+
+    steps:
+      - uses: actions/checkout@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build the Docker image
+        run: >
+          docker buildx build .
+          --file Dockerfile
+          --build-arg PROJECT_VERSION="$PROJECT_VERSION"
+          --build-arg DOCKER_org_opencontainers_image_authors="$DOCKER_org_opencontainers_image_authors"
+          --build-arg DOCKER_org_opencontainers_image_url="$DOCKER_org_opencontainers_image_url"
+          --build-arg DOCKER_org_opencontainers_image_vendor="$DOCKER_org_opencontainers_image_vendor"
+          --build-arg DOCKER_org_opencontainers_image_licenses="$DOCKER_org_opencontainers_image_licenses"
+          --build-arg DOCKER_org_opencontainers_image_ref_name="$DOCKER_org_opencontainers_image_ref_name"
+          --build-arg DOCKER_org_opencontainers_image_title="$DOCKER_org_opencontainers_image_title"
+          --build-arg DOCKER_org_opencontainers_image_description="$DOCKER_org_opencontainers_image_description"
+          --build-arg GIT_COMMIT=$(git rev-parse -q --verify HEAD) \
+          --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
+          --tag "$DOCKER_IMAGE_NAME":$(date +%s)
