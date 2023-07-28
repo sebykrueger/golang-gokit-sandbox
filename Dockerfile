@@ -23,14 +23,14 @@ RUN set -Eeux && \
     # go mod download all && \
     go mod verify
 
-ARG PROJECT_VERSION
+ARG BUILD_VERSION
 # Build image as a truly static Go binary
 RUN CGO_ENABLED=0 GOOS=linux \
     go build \
     -o /app \
     -trimpath \
     -a -tags netgo \
-    -ldflags="-w -s -X 'main.Version=${PROJECT_VERSION}'" .
+    -ldflags="-w -s -X 'main.Version=${BUILD_VERSION}'" .
 RUN go test -cover -v ./...
 
 # Stage 2 (to create a downsized "container executable", ~5MB)
