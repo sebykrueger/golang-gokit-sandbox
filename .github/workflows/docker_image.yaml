@@ -23,7 +23,7 @@ jobs:
 
     #
     #
-    #           --build-arg DOCKER_org_opencontainers_image_vendor="$DOCKER_org_opencontainers_image_vendor"
+    #
     #           --build-arg DOCKER_org_opencontainers_image_licenses="$DOCKER_org_opencontainers_image_licenses"
     #           --build-arg DOCKER_org_opencontainers_image_ref_name="$DOCKER_org_opencontainers_image_ref_name"
     #           --build-arg DOCKER_org_opencontainers_image_title="$DOCKER_org_opencontainers_image_title"
@@ -42,4 +42,5 @@ jobs:
           --build-arg PROJECT_VERSION="$PROJECT_VERSION"
           --build-arg DOCKER_org_opencontainers_image_authors="$DOCKER_org_opencontainers_image_authors"
           --build-arg DOCKER_org_opencontainers_image_url="$DOCKER_org_opencontainers_image_url"
+          --build-arg DOCKER_org_opencontainers_image_vendor="$DOCKER_org_opencontainers_image_vendor"
           --tag "$DOCKER_IMAGE_NAME":$(date +%s)
