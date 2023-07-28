@@ -1,4 +1,4 @@
-module main
+module github.com/sebykrueger/gokit-stringservice
 
 go 1.20
 
