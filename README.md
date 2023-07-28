@@ -18,13 +18,13 @@ This application deploys a basic Golang application.
   docker inspect --format='{{range $k, $v := .Config.Labels}} {{- printf "%s = \"%s\"\n" $k $v -}} {{end}}' docker.io/sebykrueger/gokit-stringservice:latest
   ```
 
-- ** Start container **
+- **Start container**
 
   ```
   ./gokit-stringservice/scripts/start_container
   ```
 
-- ** Verify the Docker labels**
+- **Verify the Docker labels**
 
 ```
 docker inspect gokit-stringservice | jq -r '.[0].Config.Labels'
