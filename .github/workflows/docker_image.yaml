@@ -22,7 +22,7 @@ jobs:
       DOCKER_org_opencontainers_image_description: "Example application written in Golang"
 
     #
-    #           --build-arg DOCKER_org_opencontainers_image_url="$DOCKER_org_opencontainers_image_url"
+    #
     #           --build-arg DOCKER_org_opencontainers_image_vendor="$DOCKER_org_opencontainers_image_vendor"
     #           --build-arg DOCKER_org_opencontainers_image_licenses="$DOCKER_org_opencontainers_image_licenses"
     #           --build-arg DOCKER_org_opencontainers_image_ref_name="$DOCKER_org_opencontainers_image_ref_name"
@@ -41,4 +41,5 @@ jobs:
           --file Dockerfile
           --build-arg PROJECT_VERSION="$PROJECT_VERSION"
           --build-arg DOCKER_org_opencontainers_image_authors="$DOCKER_org_opencontainers_image_authors"
+          --build-arg DOCKER_org_opencontainers_image_url="$DOCKER_org_opencontainers_image_url"
           --tag "$DOCKER_IMAGE_NAME":$(date +%s)
