@@ -3,7 +3,7 @@ module github.com/sebykrueger/gokit-stringservice
 go 1.20
 
 require (
-	github.com/go-kit/kit v0.12.0
+	github.com/go-kit/kit v0.13.0
 	github.com/go-kit/log v0.2.1
 	github.com/prometheus/client_golang v1.16.0
 )
