@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_golang_gokit_sandbox_1693482036538-push-trigger-input-set
+  identifier: Build_golang_gokit_sandbox_1693482036538pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: SebTestProject1
+  pipeline:
+    identifier: Build_golang_gokit_sandbox_1693482036538
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
