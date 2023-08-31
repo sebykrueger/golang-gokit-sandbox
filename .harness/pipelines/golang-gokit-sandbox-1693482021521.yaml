@@ -1,0 +1,51 @@
+pipeline:
+  identifier: Build_golang_gokit_sandbox_1693482036538
+  name: Build golang-gokit-sandbox
+  orgIdentifier: default
+  projectIdentifier: SebTestProject1
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github_OAuth_1693481799048
+        repoName: sebykrueger/golang-gokit-sandbox
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: gobuild
+                  name: go_build
+                  spec:
+                    command: go build
+                  timeout: ""
+                  type: Run
+              - step:
+                  identifier: gotest
+                  name: go_test
+                  spec:
+                    command: go test -v ./...
+                  timeout: ""
+                  type: Run
+              - step:
+                  identifier: dockerbuild
+                  name: docker_build
+                  spec:
+                    image: plugins/docker
+                    settings:
+                      dry_run: "true"
+                      repo: hello/world
+                      tags: latest
+                  timeout: ""
+                  type: Plugin
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
